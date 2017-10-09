@@ -104,7 +104,7 @@ void DLInsertFirst (tDLList *L, int val) {
 ** V případě, že není dostatek paměti pro nový prvek při operaci malloc,
 ** volá funkci DLError().
 **/
- tDLElemPtr *new;
+ tDLElemPtr new;
 
  if((new = malloc(sizeof(tDLElemPtr))) == NULL) {
   DLError();
@@ -246,7 +246,7 @@ void DLPostDelete (tDLList *L) {
  if(L->Act->rptr == NULL)
   return;
 
- tDLElemPtr* remove_item = L->Act->rptr;
+ tDLElemPtr remove_item = L->Act->rptr;
 
  if(remove_item == L->Last) {
   free(remove_item);
@@ -273,7 +273,7 @@ void DLPreDelete (tDLList *L) {
  if(L->Act->lptr == NULL)
   return;
 
- tDLElemPtr* remove_item = L->Act->lptr;
+ tDLElemPtr remove_item = L->Act->lptr;
 
  if(remove_item == L->First) {
   free(remove_item);
@@ -297,7 +297,7 @@ void DLPostInsert (tDLList *L, int val) {
 ** volá funkci DLError().
 **/
 
- tDLElemPtr *new = malloc(sizeof(tDLElemPtr));
+ tDLElemPtr new = malloc(sizeof(tDLElemPtr));
 
  if(new == NULL) {
   DLError();
@@ -321,6 +321,21 @@ void DLPreInsert (tDLList *L, int val) {
 ** V případě, že není dostatek paměti pro nový prvek při operaci malloc,
 ** volá funkci DLError().
 **/
+
+    tDLElemPtr new = malloc(sizeof(tDLElemPtr));
+
+    if(new == NULL) {
+        DLError();
+        return;
+    }
+
+
+    if(L->Act == L->Last) {
+        L->Act->lptr = new;
+        L->Act->rptr->lptr = L->Act;
+        L->Last = L->Act->rptr;
+        return;
+    }
 	
 
  solved = FALSE;                   /* V případě řešení, smažte tento řádek! */

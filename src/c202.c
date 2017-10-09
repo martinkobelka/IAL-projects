@@ -60,11 +60,10 @@ void stackInit ( tStack* s ) {
 ** volejte funkci stackError(SERR_INIT). U ostatních funkcí pro zjednodušení
 ** předpokládejte, že tato situace nenastane.
 */
-	if(s == NULL) {
+	if(s == NULL)
 		stackError(SERR_INIT);
-	}
-
-	s->top = -1;
+    else
+	    s->top = -1;
 }
 
 int stackEmpty ( const tStack* s ) {
@@ -131,8 +130,9 @@ void stackPush ( tStack* s, char c ) {
 ** Pro ověření, zda je zásobník plný, použijte dříve definovanou
 ** funkci stackFull.
 */
-	if(stackFull(s))
-		stackError(SERR_PUSH);
+	if(stackFull(s)) {
+        stackError(SERR_PUSH);
+    }
 	else
 		s->arr[++(s->top)] = c;
 }

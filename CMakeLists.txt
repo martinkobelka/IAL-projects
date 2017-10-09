@@ -14,3 +14,6 @@ add_executable(stack ${SOURCE_FILES_STACK})
 
 set(SOURCE_FILES_LINEAR_LIST src/c206.c src/c206-test.c src/c206.h)
 add_executable(linear_list ${SOURCE_FILES_LINEAR_LIST})
+
+set(SOURCE_FILES_LINEAR_LIST src/c204.c src/c204-test.c src/c204.h src/c202.c src/c202.h)
+add_executable(inf_to_pos ${SOURCE_FILES_LINEAR_LIST})
