@@ -79,7 +79,6 @@ void untilLeftPar ( tStack* s, char* postExpr, unsigned* postLen ) {
 */
 void doOperation ( tStack* s, char c, char* postExpr, unsigned* postLen ) {
 
-
     if(stackEmpty(s))
         stackPush(s, c);
 

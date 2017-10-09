@@ -133,17 +133,29 @@ void DLInsertLast(tDLList *L, int val) {
 ** Vloží nový prvek na konec seznamu L (symetrická operace k DLInsertFirst).
 ** V případě, že není dostatek paměti pro nový prvek při operaci malloc,
 ** volá funkci DLError().
-**/ 	
+**/
 
- if((L->Last->rptr = malloc(sizeof(tDLElemPtr))) == NULL){
+    tDLElemPtr new;
+
+    if ((new = malloc(sizeof(tDLElemPtr))) == NULL) {
   DLError();
   return;
  }
 
+    // If list is empty
+    if (L->First == NULL) {
+        L->First = L->Last = new;
+        L->First->data = val;
+        L->First->lptr = L->First->rptr = L->Last->rptr = L->Last->lptr = NULL;
+        return;
+    }
+
+    L->Last->rptr = new;
  L->Last->rptr->data = val;
- L->Last->rptr->lptr = L->Last;
  L->Last->rptr->rptr = NULL;
+    L->Last->rptr->lptr = L->Last;
  L->Last = L->Last->rptr;
+
 }
 
 void DLFirst (tDLList *L) {
@@ -202,6 +214,9 @@ void DLDeleteFirst (tDLList *L) {
  if(L->First == NULL)
   return;
 
+    if (L->First == L->Act)
+        L->Act = NULL;
+
  if(L->First == L->Last) {
   free(L->First);
   L->First = L->Last = NULL;
@@ -219,8 +234,11 @@ void DLDeleteLast (tDLList *L) {
 ** aktivita seznamu se ztrácí. Pokud byl seznam L prázdný, nic se neděje.
 **/
 
- if(L->First == NULL)
+    if (L->Last == NULL)
   return;
+
+    if (L->Last == L->Act)
+        L->Act = NULL;
 
  if(L->First == L->Last) {
   free(L->First);
@@ -248,16 +266,22 @@ void DLPostDelete (tDLList *L) {
 
  tDLElemPtr remove_item = L->Act->rptr;
 
- if(remove_item == L->Last) {
-  free(remove_item);
-  L->Act->rptr = NULL;
-  return;
- }
+    if (L->Act == L->First && remove_item->rptr == NULL) {
+        L->First = L->Last = L->Act;
+        L->First->lptr = L->Last->rptr = NULL;
+    } else {
+        if (remove_item->rptr == NULL) {
+            L->Act->rptr = NULL;
+            L->Last = L->Act;
+        } else {
+            L->Act->rptr = remove_item->rptr;
+            remove_item->rptr->lptr = L->Act;
+        }
+    }
+    free(remove_item);
 
- L->Act->rptr->rptr->lptr = L->Act;
- L->Act->rptr = L->Act->rptr->rptr;
 
- free(remove_item);
+
 }
 
 void DLPreDelete (tDLList *L) {
@@ -268,23 +292,25 @@ void DLPreDelete (tDLList *L) {
 **/
 
  if(!DLActive(L))
-  return;
+     return;
 
  if(L->Act->lptr == NULL)
-  return;
+     return;
 
  tDLElemPtr remove_item = L->Act->lptr;
 
- if(remove_item == L->First) {
-  free(remove_item);
-  L->Act->lptr = NULL;
-  L->First = L->Act;
-  return;
- }
-
- L->Act->lptr->lptr->rptr = L->Act;
- L->Act->rptr = L->Act->lptr->lptr;
-
+    if (L->Act == L->Last && remove_item->lptr == NULL) {
+        L->First = L->Last = L->Act;
+        L->First->lptr = L->Last->rptr = NULL;
+    } else {
+        if (remove_item->lptr == NULL) {
+            L->Act->lptr = NULL;
+            L->First = L->Act;
+        } else {
+            L->Act->lptr = remove_item->lptr;
+            remove_item->lptr->rptr = L->Act;
+        }
+    }
  free(remove_item);
 
 }
@@ -304,13 +330,11 @@ void DLPostInsert (tDLList *L, int val) {
   return;
  }
 
- if(L->Act == L->Last) {
-  L->Act->rptr = new;
-  L->Act->rptr->lptr = L->Act;
-  L->Last = L->Act->rptr;
-  return;
- }
+    if (L->Act->rptr == NULL) {
 
+    } else {
+
+    }
 
 }
 
@@ -330,15 +354,6 @@ void DLPreInsert (tDLList *L, int val) {
     }
 
 
-    if(L->Act == L->Last) {
-        L->Act->lptr = new;
-        L->Act->rptr->lptr = L->Act;
-        L->Last = L->Act->rptr;
-        return;
-    }
-	
-
- solved = FALSE;                   /* V případě řešení, smažte tento řádek! */
 }
 
 void DLCopy (tDLList *L, int *val) {

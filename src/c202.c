@@ -60,8 +60,10 @@ void stackInit ( tStack* s ) {
 ** volejte funkci stackError(SERR_INIT). U ostatních funkcí pro zjednodušení
 ** předpokládejte, že tato situace nenastane.
 */
-	if(s == NULL)
+	if (s == NULL) {
 		stackError(SERR_INIT);
+		return;
+	}
     else
 	    s->top = -1;
 }
