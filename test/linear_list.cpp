@@ -17,6 +17,7 @@ protected:
     }
 
     virtual void TearDown() {
+        DLDisposeList(ptr_list);
         free(ptr_list);
     }
 

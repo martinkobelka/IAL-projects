@@ -168,18 +168,18 @@ char* infix2postfix (const char* infExpr) {
     }
 
       // Pokud je to operátor, tak jej necháme zpracovat funkcí doOperation()
-    if(infExpr[actual_position] == '+' || infExpr[actual_position] == '-' ||
+    else if (infExpr[actual_position] == '+' || infExpr[actual_position] == '-' ||
             infExpr[actual_position] == '*' || infExpr[actual_position] == '/')
 
         doOperation (stack, infExpr[actual_position], output, &output_position);
 
       // Levou závorku pošleme na zásobník
-    if(infExpr[actual_position] == '(') {
+    else if (infExpr[actual_position] == '(') {
         stackPush(stack, '(');
     }
 
       // Při pravé závorce vyčistí zásobník až po levou závorku
-    if(infExpr[actual_position] == ')'){
+    else if (infExpr[actual_position] == ')') {
        untilLeftPar (stack, output, &output_position);
     }
 
