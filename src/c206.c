@@ -111,6 +111,8 @@ void DLInsertFirst (tDLList *L, int val) {
   return;
  }
 
+    new->data = val;
+
  // If list is empty
  if(L->First == NULL) {
   L->First = L->Last = new;
@@ -325,15 +327,23 @@ void DLPostInsert (tDLList *L, int val) {
 
  tDLElemPtr new = malloc(sizeof(tDLElemPtr));
 
- if(new == NULL) {
-  DLError();
-  return;
- }
+    if (new == NULL) {
+        DLError();
+        return;
+    }
+
+    new->data = val;
 
     if (L->Act->rptr == NULL) {
-
+        L->Act->rptr = new;
+        new->rptr = NULL;
+        new->lptr = L->Act;
+        L->Last = new;
     } else {
-
+        L->Act->rptr->lptr = new;
+        new->rptr = L->Act->rptr;
+        new->lptr = L->Act;
+        L->Act->rptr = new;
     }
 
 }
@@ -351,6 +361,20 @@ void DLPreInsert (tDLList *L, int val) {
     if(new == NULL) {
         DLError();
         return;
+    }
+
+    new->data = val;
+
+    if (L->Act->lptr == NULL) {
+        L->Act->lptr = new;
+        new->lptr = NULL;
+        new->rptr = L->Act;
+        L->First = new;
+    } else {
+        L->Act->lptr->rptr = new;
+        new->lptr = L->Act->rptr;
+        new->rptr = L->Act;
+        L->Act->lptr = new;
     }
 
 

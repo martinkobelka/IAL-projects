@@ -23,6 +23,8 @@ TEST_F(StackIntToPostTestFixture, 01) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }
 
 TEST_F(StackIntToPostTestFixture, 02) {
@@ -49,6 +51,8 @@ TEST_F(StackIntToPostTestFixture, 03) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }
 
 TEST_F(StackIntToPostTestFixture, 04) {
@@ -62,6 +66,8 @@ TEST_F(StackIntToPostTestFixture, 04) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }
 
 TEST_F(StackIntToPostTestFixture, 05) {
@@ -75,6 +81,8 @@ TEST_F(StackIntToPostTestFixture, 05) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }
 
 
@@ -89,6 +97,8 @@ TEST_F(StackIntToPostTestFixture, 06) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }
 
 TEST_F(StackIntToPostTestFixture, 07) {
@@ -102,6 +112,8 @@ TEST_F(StackIntToPostTestFixture, 07) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }
 
 TEST_F(StackIntToPostTestFixture, 08) {
@@ -115,6 +127,8 @@ TEST_F(StackIntToPostTestFixture, 08) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }
 
 TEST_F(StackIntToPostTestFixture, 09) {
@@ -128,6 +142,8 @@ TEST_F(StackIntToPostTestFixture, 09) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }
 
 TEST_F(StackIntToPostTestFixture, 10) {
@@ -141,6 +157,8 @@ TEST_F(StackIntToPostTestFixture, 10) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }
 
 TEST_F(StackIntToPostTestFixture, 11) {
@@ -154,6 +172,8 @@ TEST_F(StackIntToPostTestFixture, 11) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }
 
 
@@ -168,6 +188,8 @@ TEST_F(StackIntToPostTestFixture, 12) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }
 
 TEST_F(StackIntToPostTestFixture, 13) {
@@ -181,4 +203,6 @@ TEST_F(StackIntToPostTestFixture, 13) {
             expected_output,
             real_output
     ) << "Error debile";
+
+    free(real_output);
 }

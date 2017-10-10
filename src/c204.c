@@ -148,7 +148,10 @@ void doOperation ( tStack* s, char c, char* postExpr, unsigned* postLen ) {
 */
 char* infix2postfix (const char* infExpr) {
 
+    // Akokujeme paměť pro výstup o délce MAX_LEN
   char* output = malloc(sizeof(char) * MAX_LEN);
+
+    // Uložíme pozici aktuálního symbolu na vstupu a aktuální pozici ve výstupním řetězci
   unsigned int actual_position = 0;
   unsigned int output_position = 0;
 
@@ -156,37 +159,44 @@ char* infix2postfix (const char* infExpr) {
   tStack* stack = (tStack *)malloc(sizeof(tStack));
   stackInit(stack);
 
+    // Procházíme vstupním řetězcem tak dlouho, dokud nenajdeme konec
   while(infExpr[actual_position] != '\0') {
 
+      // Pokud je to číslo nebo literát, pošleme ho na výstup
     if(isdigit(infExpr[actual_position]) || isalpha(infExpr[actual_position])) {
       output[output_position++] = infExpr[actual_position];
     }
 
+      // Pokud je to operátor, tak jej necháme zpracovat funkcí doOperation()
     if(infExpr[actual_position] == '+' || infExpr[actual_position] == '-' ||
             infExpr[actual_position] == '*' || infExpr[actual_position] == '/')
 
         doOperation (stack, infExpr[actual_position], output, &output_position);
 
+      // Levou závorku pošleme na zásobník
     if(infExpr[actual_position] == '(') {
         stackPush(stack, '(');
     }
 
+      // Při pravé závorce vyčistí zásobník až po levou závorku
     if(infExpr[actual_position] == ')'){
        untilLeftPar (stack, output, &output_position);
     }
 
+      // Posunutí pozice
     actual_position++;
 
   }
 
+    // V zásobníku mohlo něco zůstat, vyčistíme
   untilLeftPar(stack, output, &output_position);
 
+    // Umístíme do výstupního řetězce ukončovací znaky
   output[output_position++] = '=';
-
   output[output_position++] = '\0';
 
+    // Uvolníme zásobník a vrátíme výstup
   free(stack);
-
   return output;
 }
 

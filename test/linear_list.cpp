@@ -598,8 +598,86 @@ TEST_F(LinearListTestFixture, CopyFirstAndLast) {
 
 }
 
+TEST_F(LinearListTestFixture, AddAfterAct) {
 
-int main(int argc, char **argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+    DLInsertFirst(ptr_list, 31);
+
+    DLFirst(ptr_list);
+
+    DLPostInsert(ptr_list, 42);
+
+    EXPECT_EQ(
+            ptr_list->First->data,
+            31
+    );
+
+    EXPECT_EQ(
+            ptr_list->First->rptr->data,
+            42
+    );
+
+    EXPECT_EQ(
+            NULL,
+            ptr_list->First->rptr->rptr
+    );
+
+    DLPostInsert(ptr_list, 12);
+
+    EXPECT_EQ(
+            ptr_list->First->data,
+            31
+    );
+
+    EXPECT_EQ(
+            ptr_list->First->rptr->data,
+            12
+    );
+
+    EXPECT_EQ(
+            ptr_list->First->rptr->rptr->data,
+            42
+    );
+
+}
+
+TEST_F(LinearListTestFixture, AddBeforeAct) {
+
+    DLInsertFirst(ptr_list, 31);
+
+    EXPECT_EQ(
+            ptr_list->First->data,
+            31
+    );
+
+    DLFirst(ptr_list);
+
+    DLPreInsert(ptr_list, 42);
+
+    EXPECT_EQ(
+            ptr_list->First->data,
+            42
+    );
+
+    EXPECT_EQ(
+            ptr_list->First->rptr->data,
+            31
+    );
+
+    DLPreInsert(ptr_list, 12);
+
+    EXPECT_EQ(
+            ptr_list->First->data,
+            42
+    );
+
+    EXPECT_EQ(
+            ptr_list->First->rptr->data,
+            12
+    );
+
+    EXPECT_EQ(
+            ptr_list->First->rptr->rptr->data,
+            31
+    );
+
 }
