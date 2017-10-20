@@ -2,7 +2,7 @@
 
 
 extern "C" {
-#include "../src/c206.h"
+#include "../src/c206/c206.h"
 extern int errflg;
 }
 

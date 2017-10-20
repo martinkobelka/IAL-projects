@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 
 extern "C" {
-#include "../src/c204.h"
+#include "../src/c204/c204.h"
 }
 
 

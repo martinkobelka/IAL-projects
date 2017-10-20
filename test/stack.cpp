@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 
 extern "C" {
-#include "../src/c202.h"
+#include "../src/c202/c202.h"
 int err_flag;
 }
 

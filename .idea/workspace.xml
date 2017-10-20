@@ -7,8 +7,10 @@
       <config projectName="c_start" targetName="inf_to_pos" />
       <config projectName="c_start" targetName="unit_tests" />
       <config projectName="c_start" targetName="gmock" />
+      <config projectName="c_start" targetName="binary_tree_iterative" />
       <config projectName="c_start" targetName="gtest_main" />
       <config projectName="c_start" targetName="stack" />
+      <config projectName="c_start" targetName="binary_tree_recursive" />
       <config projectName="c_start" targetName="linear_list" />
     </generated>
   </component>
@@ -19,8 +21,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95896ce7-4140-45fd-82ec-b6497bb23581" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/c401/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/c401/c401-test.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/c401/c401-test.output" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/c401/c401.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/c401/c401.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/c402/c402-test.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/c402/c402.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/c402/c402.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/c202-test.c" afterPath="$PROJECT_DIR$/src/c202/c202-test.c" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/c202.c" afterPath="$PROJECT_DIR$/src/c202/c202.c" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/c202.h" afterPath="$PROJECT_DIR$/src/c202/c202.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/c204-test.c" afterPath="$PROJECT_DIR$/src/c204/c204-test.c" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/c204.c" afterPath="$PROJECT_DIR$/src/c204/c204.c" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/c204.h" afterPath="$PROJECT_DIR$/src/c204/c204.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/c206-test.c" afterPath="$PROJECT_DIR$/src/c206/c206-test.c" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/c206.c" afterPath="$PROJECT_DIR$/src/c206/c206.c" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/c206.h" afterPath="$PROJECT_DIR$/src/c206/c206.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/c206.c" afterPath="$PROJECT_DIR$/src/c206.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/inf_to_post.cpp" afterPath="$PROJECT_DIR$/test/inf_to_post.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/linear_list.cpp" afterPath="$PROJECT_DIR$/test/linear_list.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/stack.cpp" afterPath="$PROJECT_DIR$/test/stack.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,31 +54,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="c202.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/c202.h">
+      <file leaf-file-name="c401.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/c401/c401.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
+            <state relative-caret-position="-141">
+              <caret line="136" column="22" lean-forward="false" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
+              <folding>
+                <element signature="e#2281#2300#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="c401-test.output" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/c401/c401-test.output">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-216">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="c206.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/c206.c">
+      <file leaf-file-name="c401.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/c401/c401.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="438" column="22" lean-forward="false" selection-start-line="438" selection-start-column="18" selection-end-line="438" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inf_to_post.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/inf_to_post.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="194" column="37" lean-forward="false" selection-start-line="194" selection-start-column="37" selection-end-line="194" selection-end-column="37" />
+            <state relative-caret-position="-270">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -79,11 +103,20 @@
       <find>DLF</find>
       <find>DLP</find>
       <find>--gtest_filter=StackTestFixture.*:StackTestFixture/*.*:*/StackTestFixture.*/*:*/StackTestFixture/*.*</find>
+      <find>DLInsertF</find>
       <find>malloc</find>
+      <find>BTWorkOu</find>
+      <find>BTW</find>
+      <find>BTWorkOut()</find>
+      <find>child</find>
+      <find>*RootPtr</find>
+      <find>(*RootPtr)</find>
+      <find>BTNodeP</find>
     </findStrings>
     <replaceStrings>
       <replace>input_string</replace>
       <replace>input_string;</replace>
+      <replace>child</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -102,10 +135,15 @@
         <option value="$PROJECT_DIR$/test/test.cpp" />
         <option value="$PROJECT_DIR$/test/inf_to_post.cpp" />
         <option value="$PROJECT_DIR$/test/stack.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/test/linear_list.cpp" />
         <option value="$PROJECT_DIR$/src/c204.c" />
         <option value="$PROJECT_DIR$/src/c206.c" />
+        <option value="$PROJECT_DIR$/src/c204/c204-test.c" />
+        <option value="$PROJECT_DIR$/src/c206/c206.c" />
+        <option value="$PROJECT_DIR$/src/c402/c402-test.c" />
+        <option value="$PROJECT_DIR$/src/c402/c402.c" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/c401/c401.c" />
       </list>
     </option>
   </component>
@@ -115,8 +153,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="557" />
     <option name="y" value="-4" />
     <option name="width" value="960" />
     <option name="height" value="1084" />
@@ -152,6 +190,18 @@
             <path>
               <item name="c_start" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="IAL-projects" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="c401" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c_start" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="IAL-projects" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="c402" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="c_start" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="IAL-projects" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -169,13 +219,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/c401" />
+      <recent name="$PROJECT_DIR$/src/c402" />
       <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/c206" />
+      <recent name="$PROJECT_DIR$/src/c204" />
+      <recent name="$PROJECT_DIR$/src/c202" />
+      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -190,7 +245,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Google Test.Unit_test">
+  <component name="RunManager" selected="Application.binary_tree_recursive">
     <configuration name="All in LinearListTestFixture" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="c_start" TARGET_NAME="unit_tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="c_start" RUN_TARGET_NAME="unit_tests" TEST_CLASS="LinearListTestFixture" TEST_MODE="SUITE_TEST">
       <envs />
     </configuration>
@@ -206,6 +261,12 @@
     <configuration name="Unit_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="c_start" TARGET_NAME="unit_tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="c_start" RUN_TARGET_NAME="unit_tests" TEST_MODE="SUITE_TEST">
       <envs />
     </configuration>
+    <configuration name="binary_tree_iterative" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="c_start" TARGET_NAME="binary_tree_iterative" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="c_start" RUN_TARGET_NAME="binary_tree_iterative">
+      <envs />
+    </configuration>
+    <configuration name="binary_tree_recursive" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="c_start" TARGET_NAME="binary_tree_recursive" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="c_start" RUN_TARGET_NAME="binary_tree_recursive">
+      <envs />
+    </configuration>
     <configuration name="inf_to_pos" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="c_start" TARGET_NAME="inf_to_pos" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="c_start" RUN_TARGET_NAME="inf_to_pos">
       <envs />
     </configuration>
@@ -215,15 +276,17 @@
     <configuration name="stack" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="c_start" TARGET_NAME="stack" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="c_start" RUN_TARGET_NAME="stack">
       <envs />
     </configuration>
-    <list size="8">
+    <list size="10">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.inf_to_pos" />
-      <item index="2" class="java.lang.String" itemvalue="Application.linear_list" />
-      <item index="3" class="java.lang.String" itemvalue="Application.stack" />
-      <item index="4" class="java.lang.String" itemvalue="Google Test.Unit_test" />
-      <item index="5" class="java.lang.String" itemvalue="Google Test.StackTestFixture.Inicialization" />
-      <item index="6" class="java.lang.String" itemvalue="Google Test.All in StackTestFixture" />
-      <item index="7" class="java.lang.String" itemvalue="Google Test.All in LinearListTestFixture" />
+      <item index="1" class="java.lang.String" itemvalue="Application.binary_tree_iterative" />
+      <item index="2" class="java.lang.String" itemvalue="Application.binary_tree_recursive" />
+      <item index="3" class="java.lang.String" itemvalue="Application.inf_to_pos" />
+      <item index="4" class="java.lang.String" itemvalue="Application.linear_list" />
+      <item index="5" class="java.lang.String" itemvalue="Application.stack" />
+      <item index="6" class="java.lang.String" itemvalue="Google Test.Unit_test" />
+      <item index="7" class="java.lang.String" itemvalue="Google Test.StackTestFixture.Inicialization" />
+      <item index="8" class="java.lang.String" itemvalue="Google Test.All in StackTestFixture" />
+      <item index="9" class="java.lang.String" itemvalue="Google Test.All in LinearListTestFixture" />
     </list>
     <recent_temporary>
       <list size="3">
@@ -257,7 +320,14 @@
       <workItem from="1507541224481" duration="15293000" />
       <workItem from="1507577129438" duration="10577000" />
       <workItem from="1507622789056" duration="6023000" />
-      <workItem from="1507653677145" duration="6508000" />
+      <workItem from="1507653677145" duration="6527000" />
+      <workItem from="1507660760359" duration="329000" />
+      <workItem from="1507661385250" duration="908000" />
+      <workItem from="1507668529933" duration="662000" />
+      <workItem from="1507898551458" duration="251000" />
+      <workItem from="1507899687973" duration="1861000" />
+      <workItem from="1507902727282" duration="19000" />
+      <workItem from="1508510707614" duration="28611000" />
     </task>
     <task id="LOCAL-00001" summary="Add travis configuration">
       <created>1505771348930</created>
@@ -301,31 +371,17 @@
       <option name="project" value="LOCAL" />
       <updated>1507656680923</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add part of implementation">
+      <created>1507660408651</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1507660408651</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_LinearListTestFixture - 2017.10.10 at 19h 28m 48s.xml">
-      <configuration name="All in LinearListTestFixture" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Unit_test - 2017.10.10 at 19h 24m 01s.xml">
-      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Unit_test - 2017.10.10 at 19h 25m 35s.xml">
-      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Unit_test - 2017.10.10 at 19h 28m 00s.xml">
-      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Unit_test - 2017.10.10 at 19h 37m 20s.xml">
-      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Unit_test - 2017.10.10 at 19h 38m 31s.xml">
-      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Unit_test - 2017.10.10 at 19h 46m 01s.xml">
-      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
-    </history-entry>
     <history-entry file="Unit_test - 2017.10.10 at 20h 19m 54s.xml">
       <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
@@ -335,24 +391,45 @@
     <history-entry file="Unit_test - 2017.10.10 at 20h 23m 41s.xml">
       <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
     </history-entry>
+    <history-entry file="Unit_test - 2017.10.10 at 20h 33m 34s.xml">
+      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Unit_test - 2017.10.10 at 20h 43m 57s.xml">
+      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Unit_test - 2017.10.10 at 20h 59m 02s.xml">
+      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Unit_test - 2017.10.10 at 21h 03m 03s.xml">
+      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Unit_test - 2017.10.10 at 21h 04m 41s.xml">
+      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Unit_test - 2017.10.13 at 14h 45m 04s.xml">
+      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
+    <history-entry file="Unit_test - 2017.10.13 at 15h 05m 00s.xml">
+      <configuration name="Unit_test" configurationId="CMakeGoogleTestRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62136000" />
+    <option name="totallyTimeSpent" value="94796000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15261473" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15741728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40732986" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37172773" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27434555" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40314135" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30994764" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24945295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44816753" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -360,7 +437,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -405,45 +482,19 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/c202.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/c204.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.c" />
-    <entry file="file://$PROJECT_DIR$/src/c206.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="5" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/c202.c">
+    <entry file="file://$PROJECT_DIR$/src/c202/c202.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
           <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c206.c">
+    <entry file="file://$PROJECT_DIR$/src/c206/c206.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5958">
           <caret line="331" column="0" lean-forward="false" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
@@ -452,7 +503,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.c" />
-    <entry file="file://$PROJECT_DIR$/src/c206.h">
+    <entry file="file://$PROJECT_DIR$/src/c206/c206.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="5" selection-end-column="4" />
@@ -460,15 +511,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c202.c">
+    <entry file="file://$PROJECT_DIR$/src/c202/c202.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
           <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c206.c">
+    <entry file="file://$PROJECT_DIR$/src/c206/c206.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5958">
           <caret line="331" column="0" lean-forward="false" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
@@ -477,7 +527,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.c" />
-    <entry file="file://$PROJECT_DIR$/src/c206.h">
+    <entry file="file://$PROJECT_DIR$/src/c206/c206.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="5" selection-end-column="4" />
@@ -485,32 +535,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c202.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/c206.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5958">
-          <caret line="331" column="0" lean-forward="false" selection-start-line="331" selection-start-column="0" selection-end-line="331" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.c" />
-    <entry file="file://$PROJECT_DIR$/src/c206.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="5" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/c206.c">
+    <entry file="file://$PROJECT_DIR$/src/c206/c206.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="75" column="54" lean-forward="false" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
@@ -519,7 +544,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.c" />
-    <entry file="file://$PROJECT_DIR$/src/c206.h">
+    <entry file="file://$PROJECT_DIR$/src/c206/c206.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="5" selection-end-column="4" />
@@ -527,7 +552,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c206.c">
+    <entry file="file://$PROJECT_DIR$/src/c206/c206.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="75" column="54" lean-forward="false" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
@@ -536,7 +561,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.c" />
-    <entry file="file://$PROJECT_DIR$/src/c206.h">
+    <entry file="file://$PROJECT_DIR$/src/c206/c206.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="5" selection-end-column="4" />
@@ -544,7 +569,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c206.c">
+    <entry file="file://$PROJECT_DIR$/src/c206/c206.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="75" column="54" lean-forward="false" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
@@ -552,14 +577,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c202.h">
+    <entry file="file://$PROJECT_DIR$/src/c202/c202.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c206-test.c">
+    <entry file="file://$PROJECT_DIR$/src/c206/c206-test.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3258">
           <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
@@ -573,7 +598,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c202.c">
+    <entry file="file://$PROJECT_DIR$/src/c202/c202.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1566">
           <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
@@ -603,7 +628,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c206-test.c">
+    <entry file="file://$PROJECT_DIR$/src/c206/c206-test.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
@@ -618,18 +643,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c202-test.c">
+    <entry file="file://$PROJECT_DIR$/src/c202/c202-test.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="982">
           <caret line="104" column="4" lean-forward="false" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="48" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="19" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -647,34 +665,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c204-test.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/c204.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/stdlib.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="482" column="12" lean-forward="false" selection-start-line="482" selection-start-column="12" selection-end-line="482" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,55 +683,148 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="55" lean-forward="true" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c204/c204-test.output">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c202/c202.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c202/c202.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="892">
+          <caret line="126" column="38" lean-forward="false" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c204/c204-test.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c206/c206.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c206/c206.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="144" column="5" lean-forward="false" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/inf_to_post.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
+        <state relative-caret-position="3492">
           <caret line="194" column="37" lean-forward="false" selection-start-line="194" selection-start-column="37" selection-end-line="194" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c204.c">
+    <entry file="file://$PROJECT_DIR$/src/c204/c204.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1682">
-          <caret line="64" column="11" lean-forward="false" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
+        <state relative-caret-position="612">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c206.h">
+    <entry file="file://$PROJECT_DIR$/src/c204/c204.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="22" column="3" lean-forward="false" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c202.c">
+    <entry file="file://$PROJECT_DIR$/test/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1612">
-          <caret line="126" column="38" lean-forward="false" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
+        <state relative-caret-position="450">
+          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c202.h">
+    <entry file="file://$PROJECT_DIR$/src/c402/c402.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
+        <state relative-caret-position="231">
           <caret line="39" column="2" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/c206.c">
+    <entry file="file://$PROJECT_DIR$/src/c402/c402-test.output">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="438" column="22" lean-forward="false" selection-start-line="438" selection-start-column="18" selection-end-line="438" selection-end-column="22" />
+        <state relative-caret-position="-2109">
+          <caret line="167" column="12" lean-forward="false" selection-start-line="167" selection-start-column="12" selection-end-line="167" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c402/c402-test.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2574">
+          <caret line="231" column="20" lean-forward="false" selection-start-line="231" selection-start-column="20" selection-end-line="231" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c401/c401.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c402/c402.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="733">
+          <caret line="421" column="30" lean-forward="false" selection-start-line="421" selection-start-column="30" selection-end-line="421" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c401/c401-test.output">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/c401/c401.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-141">
+          <caret line="136" column="22" lean-forward="false" selection-start-line="136" selection-start-column="22" selection-end-line="136" selection-end-column="22" />
+          <folding>
+            <element signature="e#2281#2300#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
