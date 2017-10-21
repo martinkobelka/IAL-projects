@@ -24,3 +24,6 @@ add_executable(binary_tree_iterative ${SOURCE_FILES_LINEAR_LIST})
 
 set(SOURCE_FILES_LINEAR_LIST src/c401/c401.c src/c401/c401-test.c src/c401/c401.h)
 add_executable(binary_tree_recursive ${SOURCE_FILES_LINEAR_LIST})
+
+set(SOURCE_FILES_LINEAR_LIST src/c016/c016.c src/c016/c016-test.c src/c016/c016.h)
+add_executable(hash_table ${SOURCE_FILES_LINEAR_LIST})
