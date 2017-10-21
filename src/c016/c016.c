@@ -150,10 +150,12 @@ void htInsert(tHTable *ptrht, tKey key, tData data) {
                 }
             }
 
-            item->ptrnext = malloc(sizeof(tHTable));
-            item->ptrnext->key = key;
-            item->ptrnext->data = data;
-            item->ptrnext->ptrnext = NULL;
+            item = ((*ptrht)[hashCode(key)]);
+
+            ((*ptrht)[hashCode(key)]) = malloc(sizeof(tHTable));
+            ((*ptrht)[hashCode(key)])->key = key;
+            ((*ptrht)[hashCode(key)])->data = data;
+            ((*ptrht)[hashCode(key)])->ptrnext = item;
 
         }
 
@@ -229,7 +231,7 @@ void htDelete(tHTable *ptrht, tKey key) {
                 if (item_last->key == key) {
                     tHTItem *item_next = item_last->ptrnext;
                     free(item_last);
-                    item_last = item_next;
+                    (*ptrht)[hashCode(key)] = item_next;
                     return;
                 }
 
