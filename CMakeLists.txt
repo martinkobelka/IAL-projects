@@ -5,8 +5,9 @@ project(c_start)
 include(test/CMakeLists.txt)
 enable_testing()
 
-add_executable(unit_tests test/stack.cpp test/inf_to_post.cpp test/linear_list.cpp
-        src/c202/c202.c src/c202/c202.h src/c204/c204.c src/c204/c204.h src/c206/c206.c src/c206/c206.h)
+add_executable(unit_tests test/stack.cpp test/inf_to_post.cpp test/linear_list.cpp test/BT_recursive.cpp
+        src/c202/c202.c src/c202/c202.h src/c204/c204.c src/c204/c204.h src/c206/c206.c src/c206/c206.h
+        src/c401/c401.c src/c401/c401.h)
 target_link_libraries(unit_tests gtest)
 add_test(NAME test COMMAND unit_tests)
 

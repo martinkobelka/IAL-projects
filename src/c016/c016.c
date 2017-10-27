@@ -248,7 +248,6 @@ void htDelete(tHTable *ptrht, tKey key) {
 
                             item_last->ptrnext = item_delete->ptrnext;
                             free(item_delete);
-                            item_delete = NULL;
 
                             return;
 

@@ -206,3 +206,18 @@ TEST_F(StackIntToPostTestFixture, 13) {
 
     free(real_output);
 }
+
+TEST_F(StackIntToPostTestFixture, 14) {
+    char input_string[] = "(a+b*c-d)/(e*f)=";
+    char expected_output[] = "abc*+d-ef*/=";
+    char *real_output;
+
+    real_output = infix2postfix(input_string);
+
+    EXPECT_STREQ(
+            expected_output,
+            real_output
+    ) << "Error debile";
+
+    free(real_output);
+}

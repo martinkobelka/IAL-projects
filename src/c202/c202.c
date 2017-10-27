@@ -60,10 +60,10 @@ void stackInit ( tStack* s ) {
 ** volejte funkci stackError(SERR_INIT). U ostatních funkcí pro zjednodušení
 ** předpokládejte, že tato situace nenastane.
 */
-	if (s == NULL) {
+    // Pokud je null, vypíšu chybu
+    if (s == NULL)
 		stackError(SERR_INIT);
-		return;
-	}
+        // Pokud null není, nastavím vrchol na -1
     else
 	    s->top = -1;
 }
@@ -74,6 +74,8 @@ int stackEmpty ( const tStack* s ) {
 ** Funkci implementujte jako jediný příkaz. Vyvarujte se zejména konstrukce
 ** typu "if ( true ) b=true else b=false".
 */
+
+    // Zjistí jestli je vrchol na -1, tím zjistí zda je zásobník prázný
 	return (s->top == -1);
 }
 
@@ -86,6 +88,8 @@ int stackFull ( const tStack* s ) {
 **
 ** Funkci implementujte jako jediný příkaz.
 */
+
+    // Zjistí zda je zásobník plný. Top je vždy číslo o jedna
 	return (s->top == STACK_SIZE - 1);
 
 }
@@ -100,8 +104,12 @@ void stackTop ( const tStack* s, char* c ) {
 ** Pro ověření, zda je zásobník prázdný, použijte dříve definovanou
 ** funkci stackEmpty.
 */
+
+    // Pokud je prázdný (operace nad ADT), vyvolám chybu
 	if(stackEmpty(s))
 		stackError(SERR_TOP);
+
+        // Pokud není prázdný, tak tam kam ukazuje c přiřadím prvek na indexu s->top
 	else
 		*c = s->arr[s->top];
 }
@@ -132,9 +140,12 @@ void stackPush ( tStack* s, char c ) {
 ** Pro ověření, zda je zásobník plný, použijte dříve definovanou
 ** funkci stackFull.
 */
-	if(stackFull(s)) {
+
+    // Pokud je zásobník plný, tak vyvolám chybu
+    if (stackFull(s))
         stackError(SERR_PUSH);
-    }
+
+        // Pokud není zásobník plný, tak inkrementuji index a na do pole umístím na pozici danou s->top symbol c
 	else
 		s->arr[++(s->top)] = c;
 }
