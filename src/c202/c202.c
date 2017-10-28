@@ -127,6 +127,8 @@ void stackPop ( tStack* s ) {
 ** jednoduchost neděláme.
 ** 
 */
+
+    // Pokud zásobník není prázdný, snížíme index. V opačném případě neděláme nic
 	if(!stackEmpty(s))
 		(s->top)--;
 }

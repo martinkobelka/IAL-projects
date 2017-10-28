@@ -49,14 +49,14 @@ int solved;
 ** Aby se minimalizoval počet přístupů ke struktuře zásobníku, můžete zde
 ** nadeklarovat a používat pomocnou proměnnou typu char.
 */
-void untilLeftPar ( tStack* s, char* postExpr, unsigned* postLen ) {
+void untilLeftPar(tStack *s, char *postExpr, unsigned *postLen) {
 
-    while(!stackEmpty(s)) {
+    while (!stackEmpty(s)) {
 
         char top_symbol;
         stackTop(s, &top_symbol);
 
-        if(top_symbol == '(') {
+        if (top_symbol == '(') {
             stackPop(s);
             break;
         }
@@ -77,9 +77,9 @@ void untilLeftPar ( tStack* s, char* postExpr, unsigned* postLen ) {
 ** výrazu a taktéž ukazatel na první volné místo, do kterého se má zapisovat, 
 ** představuje parametr postLen, výstupním polem znaků je opět postExpr.
 */
-void doOperation ( tStack* s, char c, char* postExpr, unsigned* postLen ) {
+void doOperation(tStack *s, char c, char *postExpr, unsigned *postLen) {
 
-    if(stackEmpty(s))
+    if (stackEmpty(s))
         stackPush(s, c);
 
     else {
@@ -87,11 +87,11 @@ void doOperation ( tStack* s, char c, char* postExpr, unsigned* postLen ) {
         char top;
         stackTop(s, &top);
 
-        while(!((top == '+' || top == '-') && (c == '*' || c == '/')) && top != '(') {
+        while (!((top == '+' || top == '-') && (c == '*' || c == '/')) && top != '(') {
             postExpr[(*postLen)++] = top;
             stackPop(s);
 
-            if(stackEmpty(s))
+            if (stackEmpty(s))
                 break;
 
             stackTop(s, &top);
@@ -146,58 +146,67 @@ void doOperation ( tStack* s, char c, char* postExpr, unsigned* postLen ) {
 ** ověřte, že se alokace skutečně zdrařila. V případě chyby alokace vraťte namísto
 ** řetězce konstantu NULL.
 */
-char* infix2postfix (const char* infExpr) {
+char *infix2postfix(const char *infExpr) {
 
     // Akokujeme paměť pro výstup o délce MAX_LEN
-  char* output = malloc(sizeof(char) * MAX_LEN);
+    char *output = malloc(sizeof(char) * MAX_LEN);
+
+    // Ověříme zda se malokizace zdařila
+    if (output == NULL)
+        return NULL;
 
     // Uložíme pozici aktuálního symbolu na vstupu a aktuální pozici ve výstupním řetězci
-  unsigned int actual_position = 0;
-  unsigned int output_position = 0;
+    unsigned int actual_position = 0;
+    unsigned int output_position = 0;
 
-  // Init stack
-  tStack* stack = (tStack *)malloc(sizeof(tStack));
-  stackInit(stack);
+    // Init stack
+    tStack *stack = (tStack *) malloc(sizeof(tStack));
+
+    // Ověříme zda se malokizace zdařila
+    if (stack == NULL)
+        return NULL;
+
+    stackInit(stack);
 
     // Procházíme vstupním řetězcem tak dlouho, dokud nenajdeme konec
-  while(infExpr[actual_position] != '\0') {
+    while (infExpr[actual_position] != '\0') {
 
-      // Pokud je to číslo nebo literát, pošleme ho na výstup
-    if(isdigit(infExpr[actual_position]) || isalpha(infExpr[actual_position])) {
-      output[output_position++] = infExpr[actual_position];
+        // Pokud je to číslo nebo literát, pošleme ho na výstup
+        if (isdigit(infExpr[actual_position]) || isalpha(infExpr[actual_position])) {
+            output[output_position++] = infExpr[actual_position];
+        }
+
+            // Pokud je to operátor, tak jej necháme zpracovat funkcí doOperation()
+        else if (infExpr[actual_position] == '+' || infExpr[actual_position] == '-' ||
+                 infExpr[actual_position] == '*' || infExpr[actual_position] == '/')
+
+            doOperation(stack, infExpr[actual_position], output, &output_position);
+
+            // Levou závorku pošleme na zásobník
+        else if (infExpr[actual_position] == '(') {
+            stackPush(stack, '(');
+        }
+
+            // Při pravé závorce vyčistí zásobník až po levou závorku
+        else if (infExpr[actual_position] == ')') {
+            untilLeftPar(stack, output, &output_position);
+        }
+
+        // Posunutí pozice
+        actual_position++;
+
     }
-
-      // Pokud je to operátor, tak jej necháme zpracovat funkcí doOperation()
-    else if (infExpr[actual_position] == '+' || infExpr[actual_position] == '-' ||
-            infExpr[actual_position] == '*' || infExpr[actual_position] == '/')
-
-        doOperation (stack, infExpr[actual_position], output, &output_position);
-
-      // Levou závorku pošleme na zásobník
-    else if (infExpr[actual_position] == '(') {
-        stackPush(stack, '(');
-    }
-
-      // Při pravé závorce vyčistí zásobník až po levou závorku
-    else if (infExpr[actual_position] == ')') {
-       untilLeftPar (stack, output, &output_position);
-    }
-
-      // Posunutí pozice
-    actual_position++;
-
-  }
 
     // V zásobníku mohlo něco zůstat, vyčistíme
-  untilLeftPar(stack, output, &output_position);
+    untilLeftPar(stack, output, &output_position);
 
     // Umístíme do výstupního řetězce ukončovací znaky
-  output[output_position++] = '=';
-  output[output_position++] = '\0';
+    output[output_position++] = '=';
+    output[output_position++] = '\0';
 
     // Uvolníme zásobník a vrátíme výstup
-  free(stack);
-  return output;
+    free(stack);
+    return output;
 }
 
 /* Konec c204.c */

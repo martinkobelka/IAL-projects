@@ -1,4 +1,4 @@
-	
+
 /* c206.c **********************************************************}
 {* Téma: Dvousměrně vázaný lineární seznam
 **
@@ -61,13 +61,13 @@ void DLError() {
 /*
 ** Vytiskne upozornění na to, že došlo k chybě.
 ** Tato funkce bude volána z některých dále implementovaných operací.
-**/	
-    printf ("*ERROR* The program has performed an illegal operation.\n");
+**/
+    printf("*ERROR* The program has performed an illegal operation.\n");
     errflg = TRUE;             /* globální proměnná -- příznak ošetření chyby */
     return;
 }
 
-void DLInitList (tDLList *L) {
+void DLInitList(tDLList *L) {
 /*
 ** Provede inicializaci seznamu L před jeho prvním použitím (tzn. žádná
 ** z následujících funkcí nebude volána nad neinicializovaným seznamem).
@@ -79,26 +79,26 @@ void DLInitList (tDLList *L) {
 
 }
 
-void DLDisposeList (tDLList *L) {
+void DLDisposeList(tDLList *L) {
 /*
 ** Zruší všechny prvky seznamu L a uvede seznam do stavu, v jakém
 ** se nacházel po inicializaci. Rušené prvky seznamu budou korektně
 ** uvolněny voláním operace free. 
 **/
 
- tDLElemPtr actualItem = L->First;
+    tDLElemPtr actualItem = L->First;
 
- while(actualItem != NULL) {
-  tDLElemPtr next = actualItem->rptr;
-  free(actualItem);
-  actualItem = next;
- }
+    while (actualItem != NULL) {
+        tDLElemPtr next = actualItem->rptr;
+        free(actualItem);
+        actualItem = next;
+    }
 
- L->First = L->Last = L->Act = NULL;
+    L->First = L->Last = L->Act = NULL;
 
 }
 
-void DLInsertFirst (tDLList *L, int val) {
+void DLInsertFirst(tDLList *L, int val) {
 /*
 ** Vloží nový prvek na začátek seznamu L.
 ** V případě, že není dostatek paměti pro nový prvek při operaci malloc,
@@ -180,7 +180,7 @@ void DLInsertLast(tDLList *L, int val) {
 
 }
 
-void DLFirst (tDLList *L) {
+void DLFirst(tDLList *L) {
 /*
 ** Nastaví aktivitu na první prvek seznamu L.
 ** Funkci implementujte jako jediný příkaz (nepočítáme-li return),
@@ -188,11 +188,11 @@ void DLFirst (tDLList *L) {
 **/
 
     // Do ukazatele aktivního prvku nastavíme ukazatel prvního prvku
- 	L->Act = L->First;
+    L->Act = L->First;
 
 }
 
-void DLLast (tDLList *L) {
+void DLLast(tDLList *L) {
 /*
 ** Nastaví aktivitu na poslední prvek seznamu L.
 ** Funkci implementujte jako jediný příkaz (nepočítáme-li return),
@@ -204,7 +204,7 @@ void DLLast (tDLList *L) {
 
 }
 
-void DLCopyFirst (tDLList *L, int *val) {
+void DLCopyFirst(tDLList *L, int *val) {
 /*
 ** Prostřednictvím parametru val vrátí hodnotu prvního prvku seznamu L.
 ** Pokud je seznam L prázdný, volá funkci DLError().
@@ -219,7 +219,7 @@ void DLCopyFirst (tDLList *L, int *val) {
         *val = L->First->data;
 }
 
-void DLCopyLast (tDLList *L, int *val) {
+void DLCopyLast(tDLList *L, int *val) {
 /*
 ** Prostřednictvím parametru val vrátí hodnotu posledního prvku seznamu L.
 ** Pokud je seznam L prázdný, volá funkci DLError().
@@ -234,7 +234,7 @@ void DLCopyLast (tDLList *L, int *val) {
         *val = L->Last->data;
 }
 
-void DLDeleteFirst (tDLList *L) {
+void DLDeleteFirst(tDLList *L) {
 /*
 ** Zruší první prvek seznamu L. Pokud byl první prvek aktivní, aktivita 
 ** se ztrácí. Pokud byl seznam L prázdný, nic se neděje.
@@ -248,27 +248,27 @@ void DLDeleteFirst (tDLList *L) {
     if (L->First == L->Act)
         L->Act = NULL;
 
-    // Pokud první je poslední, zruš ho a nastav seznam do počátečního stavu
+    // Pokud je seznam jednoprvkový, zruš ho a nastav seznam do počátečního stavu
     if (L->First == L->Last) {
         free(L->First);
         L->First = L->Last = NULL;
         return;
     }
 
-    // Pokud není první prvek poslední
+    // Pokud není prvníjednoprvkový
     L->First = L->First->rptr;
     free(L->First->lptr);
     L->First->lptr = NULL;
-}	
+}
 
-void DLDeleteLast (tDLList *L) {
+void DLDeleteLast(tDLList *L) {
 /*
 ** Zruší poslední prvek seznamu L. Pokud byl poslední prvek aktivní,
 ** aktivita seznamu se ztrácí. Pokud byl seznam L prázdný, nic se neděje.
 **/
 
     // Pokud byl seznam prázdný, neděje se nic
-    if (L->Last == NULL)
+    if (L->First == NULL)
         return;
 
     // Pokud byl poslední prvek aktivní, zruš aktivitu
@@ -289,7 +289,7 @@ void DLDeleteLast (tDLList *L) {
 
 }
 
-void DLPostDelete (tDLList *L) {
+void DLPostDelete(tDLList *L) {
 /*
 ** Zruší prvek seznamu L za aktivním prvkem.
 ** Pokud je seznam L neaktivní nebo pokud je aktivní prvek
@@ -332,10 +332,9 @@ void DLPostDelete (tDLList *L) {
     free(remove_item);
 
 
-
 }
 
-void DLPreDelete (tDLList *L) {
+void DLPreDelete(tDLList *L) {
 /*
 ** Zruší prvek před aktivním prvkem seznamu L .
 ** Pokud je seznam L neaktivní nebo pokud je aktivní prvek
@@ -378,7 +377,7 @@ void DLPreDelete (tDLList *L) {
 
 }
 
-void DLPostInsert (tDLList *L, int val) {
+void DLPostInsert(tDLList *L, int val) {
 /*
 ** Vloží prvek za aktivní prvek seznamu L.
 ** Pokud nebyl seznam L aktivní, nic se neděje.
@@ -420,7 +419,7 @@ void DLPostInsert (tDLList *L, int val) {
 
 }
 
-void DLPreInsert (tDLList *L, int val) {
+void DLPreInsert(tDLList *L, int val) {
 /*
 ** Vloží prvek před aktivní prvek seznamu L.
 ** Pokud nebyl seznam L aktivní, nic se neděje.
@@ -436,7 +435,7 @@ void DLPreInsert (tDLList *L, int val) {
     tDLElemPtr new = malloc(sizeof(tDLElemPtr));
 
     // Pokud se to nepovedlo, vypiš chybu, skonči
-    if(new == NULL) {
+    if (new == NULL) {
         DLError();
         return;
     }
@@ -464,7 +463,7 @@ void DLPreInsert (tDLList *L, int val) {
 
 }
 
-void DLCopy (tDLList *L, int *val) {
+void DLCopy(tDLList *L, int *val) {
 /*
 ** Prostřednictvím parametru val vrátí hodnotu aktivního prvku seznamu L.
 ** Pokud seznam L není aktivní, volá funkci DLError ().
@@ -479,7 +478,7 @@ void DLCopy (tDLList *L, int *val) {
         *val = L->Act->data;
 }
 
-void DLActualize (tDLList *L, int val) {
+void DLActualize(tDLList *L, int val) {
 /*
 ** Přepíše obsah aktivního prvku seznamu L.
 ** Pokud seznam L není aktivní, nedělá nic.
@@ -490,7 +489,7 @@ void DLActualize (tDLList *L, int val) {
 
 }
 
-void DLSucc (tDLList *L) {
+void DLSucc(tDLList *L) {
 /*
 ** Posune aktivitu na následující prvek seznamu L.
 ** Není-li seznam aktivní, nedělá nic.
@@ -503,7 +502,7 @@ void DLSucc (tDLList *L) {
 }
 
 
-void DLPred (tDLList *L) {
+void DLPred(tDLList *L) {
 /*
 ** Posune aktivitu na předchozí prvek seznamu L.
 ** Není-li seznam aktivní, nedělá nic.
@@ -516,7 +515,7 @@ void DLPred (tDLList *L) {
 
 }
 
-int DLActive (tDLList *L) {
+int DLActive(tDLList *L) {
 /*
 ** Je-li seznam L aktivní, vrací nenulovou hodnotu, jinak vrací 0.
 ** Funkci je vhodné implementovat jedním příkazem return.
