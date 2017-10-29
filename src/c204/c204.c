@@ -79,6 +79,7 @@ void untilLeftPar(tStack *s, char *postExpr, unsigned *postLen) {
 */
 void doOperation(tStack *s, char c, char *postExpr, unsigned *postLen) {
 
+    // Pokud je zásobník prázdný, tak ať máš cokoliv tak to pushni
     if (stackEmpty(s))
         stackPush(s, c);
 

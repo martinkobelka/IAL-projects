@@ -88,12 +88,20 @@ void DLDisposeList(tDLList *L) {
 
     tDLElemPtr actualItem = L->First;
 
+    // Opoakuji dokud nenarazím na poslední prvek (dokud poslední nebude NULL)
     while (actualItem != NULL) {
+
+        // Nássleduící prvek
         tDLElemPtr next = actualItem->rptr;
+
+        // Uvolnění aktuálního prvku
         free(actualItem);
+
+        // Přiřazení do katuálního prvku ten následující
         actualItem = next;
     }
 
+    // Nastavím seznam tak jak vypadal na začátku
     L->First = L->Last = L->Act = NULL;
 
 }
@@ -108,7 +116,7 @@ void DLInsertFirst(tDLList *L, int val) {
     // Mallocujeme paměť pro nový rvek
     tDLElemPtr new = (tDLElemPtr) malloc(sizeof(struct tDLElem));
 
-    // Ověříme zda skutečně došlo k malokizaci, pokud ne tak skonči
+    // Ověříme zda skutečně došlo k malokování, pokud ne tak vypiš chybu a skonči
     if (new == NULL) {
         DLError();
         return;
@@ -324,7 +332,6 @@ void DLPostDelete(tDLList *L) {
 
             L->Act->rptr = remove_item->rptr;
             remove_item->rptr->lptr = L->Act;
-
         }
     }
 
@@ -368,7 +375,6 @@ void DLPreDelete(tDLList *L) {
         else {
             L->Act->lptr = remove_item->lptr;
             remove_item->lptr->rptr = L->Act;
-
         }
     }
 
@@ -390,9 +396,9 @@ void DLPostInsert(tDLList *L, int val) {
         return;
 
     // Mallocuj si nový prvek
-    tDLElemPtr new = malloc(sizeof(tDLElemPtr));
+    tDLElemPtr new = (tDLElemPtr) malloc(sizeof(struct tDLElem));
 
-    // Pokud se malokizování nepovedlo, chybuj a skonči
+    // Pokud se malokování nepovedlo, chybuj a skonči
     if (new == NULL) {
         DLError();
         return;
@@ -432,7 +438,7 @@ void DLPreInsert(tDLList *L, int val) {
         return;
 
     // Malokizuj nový prvek
-    tDLElemPtr new = malloc(sizeof(tDLElemPtr));
+    tDLElemPtr new = (tDLElemPtr) malloc(sizeof(struct tDLElem));
 
     // Pokud se to nepovedlo, vypiš chybu, skonči
     if (new == NULL) {
@@ -442,7 +448,6 @@ void DLPreInsert(tDLList *L, int val) {
 
     // Přiřaď do něj hodnotu
     new->data = val;
-
 
     // Pokud před ním nic není, přidej to tam  přeukaž
     if (L->Act->lptr == NULL) {
@@ -459,8 +464,6 @@ void DLPreInsert(tDLList *L, int val) {
         new->rptr = L->Act;
         L->Act->lptr = new;
     }
-
-
 }
 
 void DLCopy(tDLList *L, int *val) {
