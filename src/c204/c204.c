@@ -150,7 +150,7 @@ void doOperation(tStack *s, char c, char *postExpr, unsigned *postLen) {
 char *infix2postfix(const char *infExpr) {
 
     // Akokujeme paměť pro výstup o délce MAX_LEN
-    char *output = malloc(sizeof(char) * MAX_LEN);
+    char *output = (char *) malloc(sizeof(char) * MAX_LEN);
 
     // Ověříme zda se malokizace zdařila
     if (output == NULL)
