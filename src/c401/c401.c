@@ -84,10 +84,11 @@ int BSTSearch(tBSTNodePtr RootPtr, char K, int *Content) {
 
     else if (RootPtr->Key == K) {
         *Content = RootPtr->BSTNodeCont;
+        return (1 == 1);
     } else if (RootPtr->Key > K) {
-        BSTSearch(RootPtr->LPtr, K, Content);
+        return BSTSearch(RootPtr->LPtr, K, Content);
     } else {
-        BSTSearch(RootPtr->RPtr, K, Content);
+        return BSTSearch(RootPtr->RPtr, K, Content);
     }
 
 }
@@ -118,9 +119,9 @@ void BSTInsert(tBSTNodePtr *RootPtr, char K, int Content) {
     } else if (K == (*RootPtr)->Key) {
         (*RootPtr)->BSTNodeCont = Content;
     } else if (K < (*RootPtr)->Key) {
-        BSTInsert(&(*RootPtr)->LPtr, K, Content);
+        BSTInsert(&((*RootPtr)->LPtr), K, Content);
     } else {
-        BSTInsert(&(*RootPtr)->RPtr, K, Content);
+        BSTInsert(&((*RootPtr)->RPtr), K, Content);
     }
 
 }
@@ -139,9 +140,15 @@ void ReplaceByRightmost(tBSTNodePtr PtrReplaced, tBSTNodePtr *RootPtr) {
 **/
 
     if (*RootPtr != NULL) {
+
+        // Pokud napravo něco je, zanořím se hlouběji
         if ((*RootPtr)->RPtr != NULL) {
             ReplaceByRightmost(PtrReplaced, &(*RootPtr)->RPtr);
-        } else {
+        }
+
+        // NO a pokud napravo už nic dalšího není,
+        // tak to hodnotu v kořenu nahradím touto hodnotou a klíčem a smažu
+        else {
             PtrReplaced->BSTNodeCont = (*RootPtr)->BSTNodeCont;
             PtrReplaced->Key = (*RootPtr)->Key;
 
@@ -186,16 +193,20 @@ void BSTDelete(tBSTNodePtr *RootPtr, char K) {
             if ((*RootPtr)->LPtr == NULL && (*RootPtr)->RPtr == NULL) {
                 free(*RootPtr);
                 *RootPtr = NULL;
+
+            // Má jen pravý podstrom
             } else if ((*RootPtr)->LPtr == NULL && (*RootPtr)->RPtr != NULL) {
                 tBSTNodePtr item = (*RootPtr);
                 (*RootPtr) = (*RootPtr)->RPtr;
                 free(item);
-                item = NULL;
+
+            // Má jen levý podstrom
             } else if ((*RootPtr)->LPtr != NULL && (*RootPtr)->RPtr == NULL) {
                 tBSTNodePtr item = (*RootPtr);
                 (*RootPtr) = (*RootPtr)->LPtr;
                 free(item);
-                item = NULL;
+
+            // Má oba dva podstromy
             } else {
                 ReplaceByRightmost(*RootPtr, &((*RootPtr)->LPtr));
             }
@@ -214,14 +225,19 @@ void BSTDispose(tBSTNodePtr *RootPtr) {
 ** inicializaci. Tuto funkci implementujte rekurzivně bez deklarování pomocné
 ** funkce.
 **/
+
+    // Pokud strom není prázdný
     if (*RootPtr != NULL) {
 
+        //  Pokud levý potomek není prázdný, zruším ho
         if ((*RootPtr)->LPtr != NULL)
             BSTDispose(&((*RootPtr)->LPtr));
 
+        // Pokud pravý potomek není prázdný, zruším ho
         if ((*RootPtr)->RPtr != NULL)
             BSTDispose(&((*RootPtr)->RPtr));
 
+        // A zruším i kořen
         free(*RootPtr);
         *RootPtr = NULL;
     }
