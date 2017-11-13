@@ -133,21 +133,19 @@ void htInsert(tHTable *ptrht, tKey key, tData data) {
             ((*ptrht)[hashCode(key)])->key = key;
             ((*ptrht)[hashCode(key)])->data = data;
             ((*ptrht)[hashCode(key)])->ptrnext = NULL;
-        } else {
+        }
+
+        else {
             tHTItem *item = (*ptrht)[hashCode(key)];
 
-            if (item->key == key) {
-                item->data = data;
-                return;
-            }
+            if (item != NULL) {
+                do {
+                    if (item->key == key) {
+                        item->data = data;
+                        return;
+                    }
 
-            while (item->ptrnext != NULL) {
-                item = item->ptrnext;
-
-                if (item->key == key) {
-                    item->data = data;
-                    return;
-                }
+                } while ((item = item->ptrnext) != NULL);
             }
 
             item = ((*ptrht)[hashCode(key)]);
@@ -177,20 +175,17 @@ tData *htRead(tHTable *ptrht, tKey key) {
 
     if (*ptrht != NULL) {
 
-        if ((*ptrht)[hashCode(key)] != NULL) {
+        tHTItem *item = NULL;
+        if ((item = (*ptrht)[hashCode(key)]) != NULL) {
 
-            tHTItem *item = ((*ptrht)[hashCode(key)]);
+            do {
 
-            if (item->key == key) {
-                return &(item->data);
-            }
-
-            while (item->ptrnext != NULL) {
-
-                item = item->ptrnext;
-                if (item->key == key)
+                if (item->key == key) {
                     return &(item->data);
-            }
+                }
+
+            } while ((item = item->ptrnext) != NULL);
+
 
         }
 
@@ -202,7 +197,7 @@ tData *htRead(tHTable *ptrht, tKey key) {
 
 /*
 ** TRP s explicitně zřetězenými synonymy.
-** Tato procedura vyjme položku s klíčem key z tabulky
+** Tato procedura vyjme položku s klíčem key z tabulkye
 ** ptrht.  Uvolněnou položku korektně zrušte.  Pokud položka s uvedeným
 ** klíčem neexistuje, dělejte, jako kdyby se nic nestalo (tj. nedělejte
 ** nic).
@@ -212,47 +207,55 @@ tData *htRead(tHTable *ptrht, tKey key) {
 
 void htDelete(tHTable *ptrht, tKey key) {
 
+    // Pokud to vubec je alokovaná tabulka
     if (*ptrht != NULL) {
 
-        tHTItem *item = (*ptrht)[hashCode(key)];
+        tHTItem *item = NULL;
 
-        if (item != NULL) {
+        // Zjistím si jestli po hashi na indexu vubec něco je
+        if ((item = (*ptrht)[hashCode(key)]) != NULL) {
 
+            // Pokud je tam jediná položka, uvolním ji
             if (item->ptrnext == NULL) {
                 free((*ptrht)[hashCode(key)]);
                 (*ptrht)[hashCode(key)] = NULL;
                 return;
-            } else {
+            }
 
-                tHTItem *item_last = (*ptrht)[hashCode(key)];
-                tHTItem *item_delete = NULL;
+            // Pokud to není jediná položka
+            else {
 
-                // Je to první položka seznamu
-                if (item_last->key == key) {
-                    tHTItem *item_next = item_last->ptrnext;
-                    free(item_last);
+
+                tHTItem *item_delete = (*ptrht)[hashCode(key)];
+
+                // Pokud je mazaná položka seznamu první položka seznamu
+                if (item_delete->key == key) {
+
+                    // Zjistíme si následující položku
+                    tHTItem *item_next = item_delete->ptrnext;
+                    // Uvolníme první položku
+                    free(item_delete);
+                    // A první položku nahradíme následující
                     (*ptrht)[hashCode(key)] = item_next;
                     return;
                 }
 
-                    // není to první položka seznamu
+                // Pokud mazadná položka není první položka seznamu
                 else {
 
-                    tHTItem *item = item_last;
-                    while (item->ptrnext != NULL) {
-                        item_last = item;
-                        item = item->ptrnext;
-                        if (item->key == key) {
+                    tHTItem *item = item_delete;
+                    tHTItem *item_last = item_delete->ptrnext;
 
-                            item_delete = item;
-
-                            item_last->ptrnext = item_delete->ptrnext;
-                            free(item_delete);
-
+                    do {
+                        if(item_last != NULL && item_last->key == key) {
+                            item->ptrnext = item_last->ptrnext;
+                            free(item_last);
                             return;
-
                         }
-                    }
+                        item = item_last;
+                        item_last = item_last->ptrnext;
+
+                    } while(item_last != NULL);
 
                 }
 
@@ -279,15 +282,22 @@ void htClearAll(tHTable *ptrht) {
         // Pokud v ní něco je
         if ((*ptrht)[i] != NULL) {
 
+            // Vezmeme si ukazatel na první prvek a dáme jej do item
             tHTItem **item = &((*ptrht)[i]);
-            tHTItem **buffer;
+            tHTItem **buffer = NULL;
+
+            // Pokud za prvkem v item něco je
             while ((*item)->ptrnext != NULL) {
+
+                // Do bufferu dáme item
                 *buffer = *item;
+                // itemem ukážeme na následující
                 *item = (*item)->ptrnext;
+                // Buffer uvolníme
                 free(*buffer);
-                *buffer = NULL;
             }
 
+            // Pokud za aktuálním prvek už nic není, tak jej uvolníme
             free(*item);
             *item = NULL;
         }
