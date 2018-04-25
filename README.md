@@ -1,15 +1,16 @@
 # IAL-projects
 
-[![Build Status](https://travis-ci.com/martinkobelka/IAL-projects.svg?token=dHk9Rwh2CD43xY5HbRpW&branch=master)](https://travis-ci.com/martinkobelka/IAL-projects)
-
-My school projets to the school subject Algorithms
+Školní projekty do předmětu IAL vyučovaném v zimním semestru druhého ročníku na Vysokém učení technickém v brně.
 
 Project 1
 ---------
 
-I dont know what I have to do.
+Implementace obousměrně vázaného lineárního seznamu, zásobníku a převod infixového výrazu na postfixový
 
 Project 2
 ---------
+Hashovací tabulka s explicitním zřetězením položek, implementace binárního stromunerekurzivně a implementace binárního stromu rekurzivně
 
-I dont know what I have to do.
+Test
+----
+Napsal jsem sadu jednotkových testů z důvodu otestování korektní funkčnosti. Byl použit framework google tests. Testy jsou ve složce test.
